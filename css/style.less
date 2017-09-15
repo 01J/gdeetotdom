@@ -1,11 +1,151 @@
 body{
+margin:0;
+padding:0;
 font-family:Arial,Helvetica,sans-serif;
 }
-.content{
+.header-top{
+background:#000;
+overflow: hidden;
+padding: 0 20px;
+li{
+display:inline-block;
+list-style:none;
+margin-right:20px;
+a{
+display:block;
+font-size:12px;
+color:#b9b9c3;
+text-decoration:none;
+margin:6px 0;
+}
+a.selected, a:hover{
+color:#fff;
+}
+}
+.menu-region{
 float:left;
-max-width:976px;
-min-width:740px;
-padding: 20px;
+}
+.menu-user{
+float:right;
+&:after{
+display:block;
+content:'';
+clear:both;
+}
+a{
+position:relative;
+padding-left:20px;
+&:before{
+content:'';
+padding: 14px 0 0 14px;
+background:url("../img/header-icons.png") no-repeat;
+position: absolute;
+left: 0;
+top: 0;
+}
+}
+.menu-user_add:before{
+background-position: -51px 0;
+}
+.menu-user_add:hover:before{
+background-position: -66px 0;
+}
+.menu-user_reg:before{
+background-position: 0 -68px;
+padding: 14px 0 0 17px;
+}
+.menu-user_reg:hover:before{
+background-position: -17px -68px;
+}
+.menu-user_enter_wrap{
+margin-right:0;
+}
+.menu-user_enter{
+span{
+border-bottom:1px dotted;
+}
+&:before{
+background-position: 0 -34px;
+}
+}
+.menu-user_enter:hover:before{
+background-position: -17px -34px;
+}
+}
+}
+.header-main{
+height:50px;
+padding: 0 20px;
+background: #3a3a43;
+overflow:hidden;
+z-index:5000;
+.logo{
+float: left;
+padding: 8px 15px 4px 0;
+width: 195px;
+img{
+width:100%;
+}
+}
+li{
+display:inline-block;
+list-style:none;
+margin:0 15px;
+a{
+display:block;
+text-decoration:none;
+font-size:14px;
+line-height:50px;
+color:#fff;
+&.menu_sell span, &.menu_rent span{
+border-bottom:1px dotted;
+}
+&.selected, &:hover{
+height:47px;
+color:#fc0;
+border-bottom:3px solid #fc0;
+span{
+border-bottom:none;
+}
+}
+&.menu_offer{
+position:relative;
+color:#ff7d41;
+padding-left:20px;
+&:before{
+content:'';
+padding: 24px 0 0 17px;
+background:url("../img/header-icons.png") no-repeat;
+background-position:0 -109px;
+position: absolute;
+left: 0;
+top: 8px;
+}
+}
+}
+}
+.header-main_menu{
+float: left;
+}
+.header-main_banner{
+float:right;
+padding: 12px 0;
+a{
+display:block;
+img{
+width:100%;
+}
+}
+}
+.absolut-menu{
+&:hover{
+fill: #ffb600;
+}
+}
+}
+ul, ol{
+margin:0;
+padding:0;
 }
 @title-color: #5e6063;
 h1, h2{
@@ -24,12 +164,18 @@ font-size:16px;
 font-weight:600;
 color: @title-color;
 }
+.content{
+float:left;
+max-width:976px;
+min-width:740px;
+padding: 20px;
+}
 .actions{
 border:1px solid #d9d9d9;
 padding-bottom:10px;
 .breadcrump{
 display:block;
-font-size: 14px;
+font-size: 12px;
 margin:10px 20px;
 color:#4673c2;
 a{
